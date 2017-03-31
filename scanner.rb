@@ -94,7 +94,7 @@ class Page
 
       begin
         image_file = agent.get(image[:url])
-      rescue ResponseCodeError => e
+      rescue Mechanize::ResponseCodeError => e
         $stderr.puts "Failed to download an image: #{e}"
       end
 
