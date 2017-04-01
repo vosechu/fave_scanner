@@ -22,8 +22,8 @@ class Scanner
   Contract nil => Scanner
   def scan
     image_statuses = []
-    next_url = 'http://mlkshk.com/user/vosechu/likes'
-    # next_url = 'http://mlkshk.com/user/vosechu/likes/before/6101651'
+    # next_url = 'http://mlkshk.com/user/vosechu/likes'
+    next_url = 'http://mlkshk.com/user/vosechu/likes/before/5650094'
 
     puts "starting with: #{next_url}"
 
@@ -96,6 +96,7 @@ class Page
         image_file = agent.get(image[:url])
       rescue Mechanize::ResponseCodeError => e
         $stderr.puts "Failed to download an image: #{e}"
+        next
       end
 
       extension = nil
